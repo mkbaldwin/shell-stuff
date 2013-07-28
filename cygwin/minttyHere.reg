@@ -1,0 +1,18 @@
+REGEDIT4
+
+;##############################################################################
+;# Installs a context menu item "MinTTY Here" on drives and folders.
+;##############################################################################
+
+[HKEY_CLASSES_ROOT\Directory\shell\MinTTY]
+@="&MinTTY Here"
+
+[HKEY_CLASSES_ROOT\Directory\shell\MinTTY\command]
+@="C:\\cygwin\\bin\\mintty.exe -e /usr/bin/bash --login -c \"cd \\\"`cygpath -u '%1'`\\\"; exec bash\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\MinTTY]
+@="&MinTTY Here"
+
+[HKEY_CLASSES_ROOT\Drive\shell\MinTTY\command]
+@="C:\\cygwin\\bin\\mintty.exe -e /usr/bin/bash --login -c \"cd \\\"`cygpath -u '%1'`\\\"; exec bash\""
+
